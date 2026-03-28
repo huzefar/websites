@@ -217,7 +217,7 @@ nav {
 }
 
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: 3.2rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
   color: var(--color-brown-dark);
@@ -524,7 +524,7 @@ footer p {
     margin: 0 auto;
   }
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -533,7 +533,7 @@ footer p {
     display: none; /* In a real app we'd add a hamburger menu */
   }
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .gallery-grid {
     grid-template-columns: 1fr;
