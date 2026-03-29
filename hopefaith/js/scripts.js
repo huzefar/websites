@@ -55,21 +55,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trigger once on load
     revealOnScroll();
 
-    // --- Simple Form Handler (prevent default to avoid refresh) ---
+    // --- Formspree AJAX Submission Handler ---
     const form = document.getElementById('form-contact');
     if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('button');
             const originalText = btn.innerText;
-            btn.innerText = 'Message Sent!';
-            btn.style.backgroundColor = 'var(--color-brown-dark)';
             
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.backgroundColor = '';
-                form.reset();
-            }, 3000);
+            // Visual loading state
+            btn.innerText = 'Sending...';
+            btn.style.opacity = '0.7';
+
+            try {
+                // Submit to Formspree
+                const response = await fetch(e.target.action, {
+                    method: form.method,
+                    body: new FormData(e.target),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    btn.innerText = 'Message Sent!';
+                    btn.style.backgroundColor = 'var(--color-brown-dark)';
+                    btn.style.opacity = '1';
+                    
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.backgroundColor = '';
+                        form.reset();
+                    }, 4000);
+                } else {
+                    btn.innerText = 'Error Sending';
+                    setTimeout(() => { btn.innerText = originalText; btn.style.opacity = '1'; }, 3000);
+                }
+            } catch (error) {
+                btn.innerText = 'Network Error';
+                setTimeout(() => { btn.innerText = originalText; btn.style.opacity = '1'; }, 3000);
+            }
         });
     }
 });
