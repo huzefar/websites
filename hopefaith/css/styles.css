@@ -478,6 +478,131 @@ textarea.form-control {
   resize: vertical;
 }
 
+.phone-input-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.country-code-select {
+  width: 42%;
+  min-width: 140px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%233E2723' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.2rem;
+}
+
+.phone-input-group input {
+  flex: 1;
+}
+
+/* Donate Section & QR Code Styling */
+.donate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 980px;
+  margin: 2.5rem auto 0 auto;
+}
+
+.donate-card {
+  background: var(--color-white);
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--color-cream-alt);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.donate-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.donate-qr-img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.upi-id-box {
+  background-color: var(--color-cream);
+  border: 1.5px dashed var(--color-brown-medium);
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+.upi-id-box button, .copy-sm-btn {
+  background: var(--color-brown-medium);
+  color: var(--color-white);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition-normal);
+}
+
+.upi-id-box button:hover, .copy-sm-btn:hover {
+  background: var(--color-brown-dark);
+}
+
+.bank-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  text-align: left;
+  width: 100%;
+}
+
+.bank-details-list li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--color-cream-alt);
+}
+
+.bank-details-list li:last-child {
+  border-bottom: none;
+}
+
+.bank-details-list .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-brown-medium);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.bank-details-list .value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Footer */
 footer {
   background-color: var(--color-text-main);

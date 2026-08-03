@@ -98,3 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- Copy Helper ---
+function copyToClipboard(text, btnId) {
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById(btnId);
+        if (btn) {
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+            }, 2500);
+        }
+    }).catch(err => {
+        console.error('Copy failed', err);
+    });
+}
+
+function copyUpiId() {
+    copyToClipboard('9867606014@ptyes', 'copy-upi-btn');
+}

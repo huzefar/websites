@@ -247,7 +247,7 @@
                             <i class="fa-solid fa-envelope fa-xl"></i>
                             <div>
                                 <h4>Email</h4>
-                                <p>hello@hope-and-faith.com</p>
+                                <p><a href="mailto:hopeandfaithtrust@gmail.com" style="color: inherit; text-decoration: none;">hopeandfaithtrust@gmail.com</a></p>
                             </div>
                         </div>
                     </div>
@@ -260,6 +260,23 @@
                         </div>
                         <div class="form-group">
                             <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group phone-input-group">
+                            <select name="country_code" class="form-control country-code-select" aria-label="Country Code" required>
+                                <option value="+91" selected>🇮🇳 India (+91)</option>
+                                <option value="+971">🇦🇪 UAE (+971)</option>
+                                <option value="+968">🇴🇲 Oman (+968)</option>
+                                <option value="+92">🇵🇰 Pakistan (+92)</option>
+                                <option value="+965">🇰🇼 Kuwait (+965)</option>
+                                <option value="+966">🇸🇦 Saudi Arabia (+966)</option>
+                                <option value="+974">🇶🇦 Qatar (+974)</option>
+                                <option value="+973">🇧🇭 Bahrain (+973)</option>
+                                <option value="+44">🇬🇧 UK (+44)</option>
+                                <option value="+1">🇺🇸 USA/CA (+1)</option>
+                                <option value="+61">🇦🇺 Australia (+61)</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <input type="tel" name="mobile" class="form-control" placeholder="Mobile Number" required>
                         </div>
                         <div class="form-group">
                             <input type="text" name="subject" class="form-control" placeholder="Subject" required>
@@ -281,11 +298,57 @@
         style="padding: 6rem 0; background-color: var(--color-cream); text-align: center;">
         <div class="container reveal">
             <h2>Support Our Mission</h2>
-            <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem auto;">
-                Your generous contributions empower us to expand our reach and build sustainable positive changes for
-                communities in need. <em>Donation options coming soon.</em>
+            <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.5rem auto;">
+                Your generous contributions empower us to expand our reach and bring sustainable relief to communities in need.
             </p>
-            <button class="btn btn-primary" disabled style="opacity: 0.7; cursor: not-allowed;">Donate Now</button>
+
+            <div class="donate-grid">
+                <!-- Option 1: UPI QR Code -->
+                <div class="donate-card">
+                    <h3 style="color: var(--color-brown-dark); margin-bottom: 0.4rem;"><i class="fa-solid fa-qrcode"></i> Scan to Donate</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--color-text-light);">Scan with any UPI app (Paytm, PhonePe, GPay, BHIM)</p>
+                    <img src="assets/images/upi_qr_code.jpeg" alt="Hope & Faith Charitable Trust UPI QR Code" class="donate-qr-img">
+                    <div class="upi-id-box">
+                        <span>UPI ID: <strong>9867606014@ptyes</strong></span>
+                        <button type="button" onclick="copyToClipboard('9867606014@ptyes', 'copy-upi-btn')" id="copy-upi-btn"><i class="fa-regular fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+
+                <!-- Option 2: Bank Transfer -->
+                <div class="donate-card">
+                    <h3 style="color: var(--color-brown-dark); margin-bottom: 0.4rem;"><i class="fa-solid fa-building-columns"></i> Bank Transfer</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--color-text-light);">Transfer directly to our official trust account</p>
+                    
+                    <ul class="bank-details-list">
+                        <li>
+                            <span class="label">Account Name</span>
+                            <span class="value">Hope &amp; Faith Charitable Trust</span>
+                        </li>
+                        <li>
+                            <span class="label">Account Number</span>
+                            <span class="value">
+                                201037804528
+                                <button type="button" class="copy-sm-btn" onclick="copyToClipboard('201037804528', 'copy-acc-btn')" id="copy-acc-btn"><i class="fa-regular fa-copy"></i> Copy</button>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label">Bank Name</span>
+                            <span class="value">IndusInd Bank</span>
+                        </li>
+                        <li>
+                            <span class="label">IFSC Code</span>
+                            <span class="value">
+                                INDB0001374
+                                <button type="button" class="copy-sm-btn" onclick="copyToClipboard('INDB0001374', 'copy-ifsc-btn')" id="copy-ifsc-btn"><i class="fa-regular fa-copy"></i> Copy</button>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label">Reg. Mobile No.</span>
+                            <span class="value">9867606014</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
