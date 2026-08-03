@@ -505,8 +505,9 @@ textarea.form-control {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  max-width: 980px;
+  max-width: 960px;
   margin: 2.5rem auto 0 auto;
+  align-items: stretch;
 }
 
 .donate-card {
@@ -520,6 +521,7 @@ textarea.form-control {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .donate-card:hover {
@@ -529,26 +531,29 @@ textarea.form-control {
 
 .donate-qr-img {
   width: 100%;
-  max-width: 280px;
+  max-width: 230px;
   height: auto;
   border-radius: 16px;
   display: block;
-  margin: 0 auto 1.5rem auto;
+  margin: 0.5rem auto 1.2rem auto;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .upi-id-box {
   background-color: var(--color-cream);
   border: 1.5px dashed var(--color-brown-medium);
-  padding: 0.8rem 1.2rem;
+  padding: 0.75rem 1rem;
   border-radius: 12px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.8rem;
+  justify-content: space-between;
+  gap: 0.5rem;
   font-weight: 600;
   color: var(--color-text-main);
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .upi-id-box button, .copy-sm-btn {
@@ -561,6 +566,7 @@ textarea.form-control {
   font-size: 0.85rem;
   font-weight: 600;
   transition: var(--transition-normal);
+  white-space: nowrap;
 }
 
 .upi-id-box button:hover, .copy-sm-btn:hover {
@@ -570,13 +576,17 @@ textarea.form-control {
 .bank-details-list {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0 0 0;
+  margin: 1.2rem 0 0 0;
   text-align: left;
   width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .bank-details-list li {
-  padding: 0.9rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--color-cream-alt);
 }
 
@@ -591,11 +601,11 @@ textarea.form-control {
   color: var(--color-brown-medium);
   font-weight: 600;
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .bank-details-list .value {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-text-main);
   display: flex;
